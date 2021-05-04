@@ -175,8 +175,6 @@ def handler(event: dict, context: dict):
             return
 
         manager = Manager(instance.pool_name)
-        if is_address_removed_event(event):
-            manager.remove_addresses(instance.instance_id)
         manager.add_addresses()
 
     elif is_timer(event):
